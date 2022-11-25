@@ -28,6 +28,6 @@ spec:
         tags: builder,rust,rust-1.62
       from:
         kind: DockerImage
-        name: quay.io/nlembers/s2i-rust:v1.1
+        name: quay.io/nlembers/s2i-rust:v1.0
       referencePolicy:
         type: Local

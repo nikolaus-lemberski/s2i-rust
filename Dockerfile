@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi:8.5
+FROM registry.access.redhat.com/ubi8:8.5
 
 LABEL maintainer="Nikolaus Lemberski <nikolaus@redhat.com>"
 
@@ -7,7 +7,7 @@ LABEL io.k8s.description="Platform for building and running Rust applications" \
     io.openshift.expose-services="8080:http" \
     io.openshift.tags="builder,rust"
 
-RUN yum update -y && yum install -y cargo && yum clean all -y
+RUN yum update -y && yum install cargo -y && yum clean all -y
 
 COPY ./s2i/bin/ /usr/libexec/s2i
 
