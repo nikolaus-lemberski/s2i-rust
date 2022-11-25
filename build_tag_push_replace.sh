@@ -6,7 +6,7 @@ MINOR_VERSION=1
 REGISTRY=quay.io/nlembers
 
 podman build -t s2i-rust .
-podman tag s2i-rust:latest quay.io/nlembers/s2i-rust:v1.${MINOR_VERSION}
+podman tag s2i-rust:latest ${REGISTRY}/s2i-rust:v1.${MINOR_VERSION}
 podman push ${REGISTRY}/s2i-rust:v1.${MINOR_VERSION}
 
 sed -i'.bak' -e 's/s2i-rust:v1.'$(($MINOR_VERSION - 1))'/s2i-rust:v1.'$MINOR_VERSION'/g' imagestream.yml

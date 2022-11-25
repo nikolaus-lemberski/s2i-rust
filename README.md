@@ -11,3 +11,12 @@ oc create -f imagestream.yml --as system:admin
 ```
 
 Now you can select the new Rust Builder when creating new apps. You can use [this Rust app](https://github.com/nikolaus-lemberski/hello-rust) to test it.
+
+## Helper scripts
+
+You can use the helper scripts
+
+* build_tag_push_create.sh
+* build_tag_push_replace.sh
+
+to speed up the building, tagging and applying to OpenShift.
