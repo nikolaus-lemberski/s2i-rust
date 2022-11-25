@@ -11,4 +11,4 @@ Build the Dockerfile and push to Container Registry. Then create the ImageStream
 oc create -f imagestream.yml --as system:admin
 ```
 
-Now you can select the new Rust Builder when creating new apps.
+Now you can select the new Rust Builder when creating new apps. You can use [this Rust app](https://github.com/nikolaus-lemberski/hello-rust) to test it.
