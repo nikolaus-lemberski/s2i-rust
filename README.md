@@ -1,4 +1,3 @@
-
 # s2i Rust
 
 Sample source-to-image builder image for Rust apps on OpenShift Container Platform. Not intended for production use.
