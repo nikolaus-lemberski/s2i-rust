@@ -1,0 +1,33 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    openshift.io/display-name: Rust
+  name: rust
+  namespace: openshift
+spec:
+  tags:
+    - name: latest
+      annotations:
+        description: Platform for building and running Rust applications.
+        iconClass: icon-shadowman
+        openshift.io/display-name: Rust
+        supports: rust
+        tags: builder,rust
+      from:
+        kind: ImageStreamTag
+        name: "1.62"
+      referencePolicy:
+        type: Local
+    - name: "1.62"
+      annotations:
+        description: Build and run Rust applications.
+        iconClass: icon-shadowman
+        openshift.io/display-name: Rust 1.62
+        supports: rust
+        tags: builder,rust,rust-1.62
+      from:
+        kind: DockerImage
+        name: quay.io/nlembers/s2i-rust:v1.1
+      referencePolicy:
+        type: Local

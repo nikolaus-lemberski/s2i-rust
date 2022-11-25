@@ -1,0 +1,16 @@
+#!/bin/bash -e
+#
+# S2I run script for the 'rust-1.65' image.
+# The run script executes the server that runs your application.
+#
+# For more information see the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+echo "---> Read .buildenv"
+cd ./app
+cat ./target/release/.buildenv
+. ./target/release/.buildenv
+
+echo "---> Run application"
+./target/release/$name
